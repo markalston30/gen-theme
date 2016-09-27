@@ -1,2 +1,2 @@
 # gen-theme
-Genesis themes
+Genesis theme
