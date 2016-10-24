@@ -1,24 +1,20 @@
 <?php
 
 /*==================================================
-=            Starter Theme Introduction            =
+=                 Theme Introduction               =
 ==================================================*/
 
 /**
  *
- * About Starter
+ * About Baked
  * --------------
- * Starter is a project by Calvin Koepke to create a starter theme for Genesis Framework developers that doesn't over-bloat
- * their starting base. It includes commonly used templates, codes, and styles, along with optional SCSS and Gulp tasking.
+ * Baked is an elegant theme for the seriously cool food blogger, not some twee pinch of yummer.
  *
  * Credits and Licensing
  * --------------
- * Starter was created by Calvin Koepke, and is under GPL 2.0+.
- * 
- * Find me on Twitter: @cjkoepke
+ * Baked was created by Mark Alston, and is under GPL 2.0+.
  *
  */
-
 
 /*============================================
 =            Begin Functions File            =
@@ -31,16 +27,16 @@
  * @since 1.0.0
  *
  */
-define( 'CHILD_THEME_NAME', 'Starter Theme' );
-define( 'CHILD_THEME_AUTHOR', 'Calvin Koepke' );
-define( 'CHILD_THEME_AUTHOR_URL', 'https://calvinkoepke.com/' );
-define( 'CHILD_THEME_URL', 'http://startertheme.io' );
+define( 'CHILD_THEME_NAME', 'Baked' );
+define( 'CHILD_THEME_AUTHOR', 'Mark Alston' );
+define( 'CHILD_THEME_AUTHOR_URL', 'http://markalston.co/' );
+define( 'CHILD_THEME_URL', 'http://markalston.co/' );
 define( 'CHILD_THEME_VERSION', '1.0.0' );
-define( 'TEXT_DOMAIN', 'startertheme' );
+define( 'TEXT_DOMAIN', 'Baked' );
 
 /**
  *
- * Start the engine
+ * Start the engine 
  *
  * @since 1.0.0
  *
@@ -54,25 +50,25 @@ include_once( get_template_directory() . '/lib/init.php');
  * @since 1.0.0
  *
  */
-add_action( 'wp_enqueue_scripts', 'startertheme_load_assets' );
-function startertheme_load_assets() {
+add_action( 'wp_enqueue_scripts', 'bk_load_assets' );
+function bk_load_assets() {
 
 	/* Load Google Font */
-	wp_enqueue_style( 'startertheme-fonts', '//fonts.googleapis.com/css?family=Lato:400,700,700italic', array(), CHILD_THEME_VERSION );
+	wp_enqueue_style( 'bk', '//fonts.googleapis.com/css?family=Playfair+Display:400,700|Raleway:400,700', array(), CHILD_THEME_VERSION );
 
 	/* Load JS */
-	wp_enqueue_script( 'startertheme-global', get_stylesheet_directory_uri() . '/assets/js/global.js', array( 'jquery' ), CHILD_THEME_VERSION, true );
-	wp_enqueue_script( 'startertheme-responsive-menu', get_stylesheet_directory_uri() . '/assets/js/responsive-menu.js', array( 'jquery', 'startertheme-global' ), CHILD_THEME_VERSION, true );
+	wp_enqueue_script( 'bk-global', get_stylesheet_directory_uri() . '/assets/js/global.js', array( 'jquery' ), CHILD_THEME_VERSION, true );
+	wp_enqueue_script( 'bk-responsive-menu', get_stylesheet_directory_uri() . '/assets/js/responsive-menu.js', array( 'jquery', 'bk-global' ), CHILD_THEME_VERSION, true );
 
 	/* Load Icons */
 	wp_enqueue_style( 'dashicons' );
 
 	/* Localize Responsive Menu Variables */
 	$output = array(
-		'mainMenu' => __( 'Menu', 'startertheme' ),
-		'subMenu'  => __( 'Menu', 'startertheme' ),
+		'mainMenu' => __( 'Menu', 'bk' ),
+		'subMenu'  => __( 'Menu', 'bk' ),
 	);
-	wp_localize_script( 'startertheme-responsive-menu', 'starterthemeL10n', $output );
+	wp_localize_script( 'bk-responsive-menu', 'starterthemeL10n', $output );
 
 }
 
@@ -102,7 +98,7 @@ include_once( get_stylesheet_directory() . '/lib/classes.php' );
 
 /**
  *
- * Apply Starter Theme defaults (overrides default Genesis settings)
+ * Apply bk defaults (overrides default Genesis settings)
  *
  * @since 1.0.0
  * @uses /lib/defaults.php
@@ -112,7 +108,7 @@ include_once( get_stylesheet_directory() . '/lib/defaults.php' );
 
 /**
  *
- * Apply Starter Theme default attributes
+ * Apply bk default attributes
  *
  * @since 1.0.0
  * @uses /lib/attributes.php
